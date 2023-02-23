@@ -9,7 +9,9 @@ import UIKit
 import AVFoundation
 class ViewController: UIViewController {
     var player: AVAudioPlayer!
-
+    var timer = Timer()
+    let END_TIME = 3.0
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var winCount: UILabel!
     @IBOutlet weak var loseCount: UILabel!
     @IBOutlet weak var tieCount: UILabel!
@@ -22,8 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
- 
+    
+    
     @IBAction func myChoiceButton(_ sender: UIButton) {
         var myChoice = 0
         if sender.currentTitle == "rock" {
@@ -90,7 +92,7 @@ class ViewController: UIViewController {
                     print("Not Worked")
                 }
             }
-
+            
         case 2:
             if enemyChoice == 1 {
                 if let newCount = winCount.text, var newCountInt = Int(newCount){
@@ -153,10 +155,26 @@ class ViewController: UIViewController {
             }
         }
         
+        if result == "tieCat" {
+            resultLabel.text = "Tie - Don't give paws up!"
+        } else if result == "winCat" {
+            resultLabel.text = "Win - You are meowsome"
+        } else if result == "loseCat" {
+            resultLabel.text = "Lose - You are meowsireble"
+        }
+        
         let url = Bundle.main.url(forResource: result, withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
-
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target:self, selector: #selector(stop), userInfo:nil, repeats: true)
+        
+    }
+    
+    @objc func stop() {
+        if player.currentTime >= END_TIME {
+            player.stop()
+            timer.invalidate()
+        }
     }
 }
 

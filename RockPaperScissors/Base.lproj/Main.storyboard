@@ -79,6 +79,7 @@
                                                 <color key="backgroundColor" red="0.96091800360000001" green="0.86607068050000002" blue="0.83710655270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="cvV-ec-CyA"/>
+                                                    <constraint firstAttribute="width" constant="298.33333333333331" id="zqA-n3-0Ff"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                                 <color key="textColor" red="0.52549022440000004" green="0.39607840779999998" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -133,6 +134,7 @@
                         <outlet property="enemyImageView" destination="G2J-dK-dPS" id="VP3-PG-Xt1"/>
                         <outlet property="loseCount" destination="onH-XZ-DiA" id="yIV-2q-U1r"/>
                         <outlet property="paperButton" destination="6XF-fg-a9z" id="VQJ-Ni-X7D"/>
+                        <outlet property="resultLabel" destination="yBJ-Aa-OKk" id="7vJ-7C-6RE"/>
                         <outlet property="rockButton" destination="P0Y-03-cQ8" id="cme-na-8ci"/>
                         <outlet property="scissorsButton" destination="y2F-Ci-tpe" id="OLm-37-5W5"/>
                         <outlet property="tieCount" destination="eDc-iP-Ljw" id="rOw-vx-ebu"/>
