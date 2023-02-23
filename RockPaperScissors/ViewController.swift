@@ -29,28 +29,19 @@ class ViewController: UIViewController {
     @IBAction func myChoiceButton(_ sender: UIButton) {
         var myChoice = 0
         if sender.currentTitle == "rock" {
-            let rock = UIImage(named: "rock.png")
-            rockButton.setBackgroundImage(rock, for: UIControl.State.normal)
-            let paper = UIImage(named: "palePaper.png")
-            paperButton.setBackgroundImage(paper, for: UIControl.State.normal)
-            let scissors = UIImage(named: "paleScissors.png")
-            scissorsButton.setBackgroundImage(scissors, for: UIControl.State.normal)
+            rockButton.alpha = 1.0
+            paperButton.alpha = 0.7
+            scissorsButton.alpha = 0.7
             myChoice = 1
         } else if sender.currentTitle == "paper" {
-            let rock = UIImage(named: "paleRock.png")
-            rockButton.setBackgroundImage(rock, for: UIControl.State.normal)
-            let paper = UIImage(named: "paper.png")
-            paperButton.setBackgroundImage(paper, for: UIControl.State.normal)
-            let scissors = UIImage(named: "paleScissors.png")
-            scissorsButton.setBackgroundImage(scissors, for: UIControl.State.normal)
+            rockButton.alpha = 0.7
+            paperButton.alpha = 1.0
+            scissorsButton.alpha = 0.7
             myChoice = 2
         } else if sender.currentTitle == "scissors" {
-            let rock = UIImage(named: "paleRock.png")
-            rockButton.setBackgroundImage(rock, for: UIControl.State.normal)
-            let paper = UIImage(named: "palePaper.png")
-            paperButton.setBackgroundImage(paper, for: UIControl.State.normal)
-            let scissors = UIImage(named: "scissors.png")
-            scissorsButton.setBackgroundImage(scissors, for: UIControl.State.normal)
+            rockButton.alpha = 0.7
+            paperButton.alpha = 0.7
+            scissorsButton.alpha = 1.0
             myChoice = 3
         }
         let enemyChoice = Int.random(in: 1...3)
